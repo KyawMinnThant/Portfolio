@@ -79,6 +79,6 @@ export const projects = [
     image: "https://ik.imagekit.io/iyawrzexxj/Portfolio/portfolio_site.png",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/KyawMinnThant/Portfolio",
-    websiteUrl: "https://anime-jax-mhqd.vercel.app/",
+    websiteUrl: "https://portfolio-lac-alpha-ng63kcpolb.vercel.app/",
   },
 ];

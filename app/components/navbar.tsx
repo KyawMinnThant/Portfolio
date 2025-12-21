@@ -10,8 +10,8 @@ import Link from "next/link";
 const sections: Section[] = [
   { name: "Home", id: 1, scrollIndex: 0, scrollIndexSm: 0 },
   { name: "Projects", id: 2, scrollIndex: 1, scrollIndexSm: 1 },
-  { name: "About Me", id: 3, scrollIndex: 3.5, scrollIndexSm: 5 },
-  { name: "Contact", id: 4, scrollIndex: 6.4, scrollIndexSm: 9.9 },
+  { name: "About Me", id: 3, scrollIndex: 3.5, scrollIndexSm: 5.5 },
+  { name: "Contact", id: 4, scrollIndex: 6, scrollIndexSm: 9.9 },
 ];
 
 const Navbar = () => {
@@ -67,6 +67,8 @@ const Navbar = () => {
       behavior: "smooth",
     });
   };
+
+  console.log(activeId);
 
   return (
     <>
