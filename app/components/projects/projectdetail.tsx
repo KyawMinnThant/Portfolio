@@ -132,7 +132,10 @@ const ProjectDetailComponent: React.FC<ProjectDetailProps> = ({ id }) => {
           </motion.p>
 
           {/* Buttons */}
-          <motion.div className="flex gap-4 mt-4" variants={itemVariants}>
+          <motion.div
+            className="flex flex-wrap gap-4 mt-4"
+            variants={itemVariants}
+          >
             {project.githubUrl && (
               <a
                 href={project.githubUrl}

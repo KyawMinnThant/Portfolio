@@ -1,6 +1,6 @@
 export type Section = {
   name: string;
-  id: string;
+  id: number | string;
   scrollIndex: number;
   scrollIndexSm: number;
 };

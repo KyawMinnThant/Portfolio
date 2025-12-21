@@ -36,10 +36,10 @@ const HeroSection = () => {
           (isMobile() ? sections[i].scrollIndexSm : sections[i].scrollIndex) *
           window.innerHeight;
 
-        if (scrollY >= top) {
-          currentId = sections[i].id;
-          break;
-        }
+        // if (scrollY >= top) {
+        //   currentId = sections[i].id;
+        //   break;
+        // }
       }
 
       setActiveId(currentId);
@@ -72,7 +72,7 @@ const HeroSection = () => {
           variants={fade}
         >
           <motion.h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight mx-auto lg:mx-0"
+            className="xl:text-5xl md:text-4xl text-4xl lg:text-3xl font-bold text-white mb-4 leading-tight mx-auto lg:mx-0"
             custom={0.1}
             variants={fade}
           >

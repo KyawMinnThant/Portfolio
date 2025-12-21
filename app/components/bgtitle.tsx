@@ -8,7 +8,7 @@ const BgTitle = ({
   maintitle: string;
 }) => {
   return (
-    <div className="px-6 sm:px-10 flex justify-center items-center h-40 relative">
+    <div className="px-6 sm:px-10 flex justify-center items-center h-30 relative">
       {/* Big outlined text */}
       <h1
         className="

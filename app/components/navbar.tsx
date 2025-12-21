@@ -5,17 +5,18 @@ import { IoMdMenu } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/lib/types/type";
+import Link from "next/link";
 
 const sections: Section[] = [
-  { name: "Home", id: "home", scrollIndex: 0, scrollIndexSm: 0 },
-  { name: "Projects", id: "projects", scrollIndex: 1, scrollIndexSm: 1.42 },
-  { name: "About Me", id: "about", scrollIndex: 3.5, scrollIndexSm: 5.8 },
-  { name: "Contact", id: "contact", scrollIndex: 6.4, scrollIndexSm: 11.2 },
+  { name: "Home", id: 1, scrollIndex: 0, scrollIndexSm: 0 },
+  { name: "Projects", id: 2, scrollIndex: 1, scrollIndexSm: 1 },
+  { name: "About Me", id: 3, scrollIndex: 3.5, scrollIndexSm: 5 },
+  { name: "Contact", id: 4, scrollIndex: 6.2, scrollIndexSm: 9.9 },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeId, setActiveId] = useState("home");
+  const [activeId, setActiveId] = useState<number | string>(1);
   const [isOpen, setIsOpen] = useState(false);
 
   const isMobile = () => window.innerWidth < 768;
@@ -29,28 +30,29 @@ const Navbar = () => {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 10);
 
-      let currentId = sections[0].id;
+      // let currentId = sections[0].id;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const top =
           (isMobile() ? sections[i].scrollIndexSm : sections[i].scrollIndex) *
           window.innerHeight;
 
-        if (scrollY >= top) {
-          currentId = sections[i].id;
-          break;
-        }
+        // if (scrollY >= top) {
+        //   currentId = sections[i].id;
+        //   break;
+        // }
       }
 
-      setActiveId(currentId);
+      // setActiveId(currentId);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScrollTo = (id: string) => {
+  const handleScrollTo = (id: number | string) => {
     const section = sections.find((s) => s.id === id);
+    setActiveId(id);
     if (!section) return;
 
     const index = isMobile() ? section.scrollIndexSm : section.scrollIndex;
@@ -61,6 +63,8 @@ const Navbar = () => {
     });
   };
 
+  console.log(activeId);
+
   return (
     <>
       {/* Navbar */}
@@ -70,12 +74,13 @@ const Navbar = () => {
         }`}
       >
         <div className=" flex max-w-7xl items-center justify-between px-6 py-4">
-          <h1
-            onClick={() => handleScrollTo("home")}
+          <Link
+            href={"/"}
+            onClick={() => handleScrollTo(1)}
             className="cursor-pointer text-3xl font-extrabold text-blue-500"
           >
             Portfolio
-          </h1>
+          </Link>
 
           <ul className="hidden items-center gap-10 font-medium text-gray-300 md:flex">
             {sections.map(({ name, id }) => (
