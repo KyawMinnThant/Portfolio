@@ -11,7 +11,7 @@ const sections: Section[] = [
   { name: "Home", id: 1, scrollIndex: 0, scrollIndexSm: 0 },
   { name: "Projects", id: 2, scrollIndex: 1, scrollIndexSm: 1 },
   { name: "About Me", id: 3, scrollIndex: 3.5, scrollIndexSm: 5 },
-  { name: "Contact", id: 4, scrollIndex: 6.2, scrollIndexSm: 9.9 },
+  { name: "Contact", id: 4, scrollIndex: 6.4, scrollIndexSm: 9.9 },
 ];
 
 const Navbar = () => {
@@ -21,33 +21,38 @@ const Navbar = () => {
 
   const isMobile = () => window.innerWidth < 768;
 
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    setScrolled(scrollY > 10);
+
+    let currentId = sections[0].id;
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const top =
+        (isMobile() ? sections[i].scrollIndexSm : sections[i].scrollIndex) *
+        window.innerHeight;
+
+      if (scrollY >= top) {
+        currentId = sections[i].id;
+        break;
+      }
+    }
+
+    setActiveId(currentId);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setScrolled(scrollY > 10);
-
-      // let currentId = sections[0].id;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const top =
-          (isMobile() ? sections[i].scrollIndexSm : sections[i].scrollIndex) *
-          window.innerHeight;
-
-        // if (scrollY >= top) {
-        //   currentId = sections[i].id;
-        //   break;
-        // }
-      }
-
-      // setActiveId(currentId);
-    };
-
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll); // Recalculate on resize
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   const handleScrollTo = (id: number | string) => {
@@ -62,8 +67,6 @@ const Navbar = () => {
       behavior: "smooth",
     });
   };
-
-  console.log(activeId);
 
   return (
     <>

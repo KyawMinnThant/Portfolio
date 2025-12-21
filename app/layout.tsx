@@ -35,6 +35,9 @@ export default function RootLayout({
         className={`
           bg-[#161616]
           antialiased
+           min-h-screen
+          flex
+          flex-col
           ${dmSans.className}
           ${geistSans.variable}
           ${geistMono.variable}
@@ -42,7 +45,7 @@ export default function RootLayout({
       >
         <Navbar />
 
-        {children}
+        <main className=" grow">{children}</main>
         <Footer />
       </body>
     </html>

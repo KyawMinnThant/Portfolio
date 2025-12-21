@@ -122,7 +122,7 @@ const AboutMe: React.FC = () => {
       <Timeline />
 
       <a
-        href="https://drive.google.com/file/d/1Byt1KpFId3XGpptOzahAXUsnUmpbwW-Y/view?usp=sharing"
+        href="https://drive.google.com/file/d/1Byt1KpFId3XGpptOzahAXUsnUmpbwW-Y/view?usp=drive_link"
         target="_blank"
         className="bg-blue-700 text-center text-white hover:bg-blue-800 p-2 font-semibold mb-5 transition-transform active:scale-95"
       >

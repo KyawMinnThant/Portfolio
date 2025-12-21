@@ -68,4 +68,17 @@ export const projects = [
     githubUrl: "https://github.com/KyawMinnThant/AnimeJAX",
     websiteUrl: "https://anime-jax-mhqd.vercel.app/",
   },
+
+  {
+    id: 6,
+    title: "Portfolio",
+    description:
+      "My porfolio which described who I am and what can I do. Clean and responsive.",
+    fullDescription:
+      " Clean and responsive design using Next.js and Tailwind. Using Framer Motion for animation and icons are from react icon. Using typewriter-effect for automatic typing and react-vertical-timeline-component for my timeline. This is all about me like who I am and what can I actually do like what I could offer in Web Developing.",
+    image: "https://ik.imagekit.io/iyawrzexxj/Portfolio/portfolio_site.png",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    githubUrl: "https://github.com/KyawMinnThant/Portfolio",
+    websiteUrl: "https://anime-jax-mhqd.vercel.app/",
+  },
 ];

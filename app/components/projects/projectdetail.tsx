@@ -144,7 +144,7 @@ const ProjectDetailComponent: React.FC<ProjectDetailProps> = ({ id }) => {
                 className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition"
               >
                 <FaGithub />
-                <span>View on GitHub</span>
+                <span>GitHub</span>
               </a>
             )}
 
@@ -156,7 +156,7 @@ const ProjectDetailComponent: React.FC<ProjectDetailProps> = ({ id }) => {
                 className="flex items-center gap-2 px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white rounded-md transition"
               >
                 <FaExternalLinkAlt />
-                <span>View Website</span>
+                <span>Website</span>
               </a>
             )}
           </motion.div>

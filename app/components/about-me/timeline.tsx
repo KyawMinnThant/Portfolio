@@ -33,9 +33,9 @@ const timelineData: TimelineItem[] = [
   {
     id: 4,
     date: "2024",
-    title: "Attending NCC Level-4 in MST College",
+    title: "Attending NCC Level-4 Diploma in MST College",
     description:
-      "Attended NCC Level-4 in MST College and learned about database,software engineering,algorithms,basic networking,frontend,C#,OOSAD and basic computer systems. And I passed the exam with 7 distinctions and 1 merit.",
+      "Attended NCC Level-4 Diploma in MST College and learned about database,software engineering,algorithms,basic networking,frontend,C#,OOSAD and basic computer systems. And I passed the exam with 7 distinctions and 1 merit.",
   },
   {
     id: 5,
